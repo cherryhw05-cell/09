@@ -1,21 +1,38 @@
 // 09주차 프로그래밍 실습
 
-// 실습01
-#include <stdio.h> 
+// 실습02
+#include <stdio.h>
+// #include <stdlib.h>
+#define SIZE 5
+
+// int main(void) {
+//     int i;
+//     int grade[SIZE];
+//     printf("5명의 점수를 입력하세요.\n");
+
+//     for (i=0; i<SIZE; i++)
+//         scanf("%d", &grade[i]);
+
+//     for (i=0; i<SIZE; i++)
+//         printf("grade[%d] = %d\n", i, grade[i]);
+
+//     return 0;
+// }
 
 int main(void) {
-    int grade[5];
+    int i, average;
+    int sum;
+    int grade[SIZE];
 
-    grade[0] = 10;
-    grade[1] = 20;
-    grade[2] = 30;
-    grade[3] = 40;
-    grade[4] = 50;
-    
-    for (int i=0; i<5; i++) {
-        printf("grade[%i] = %i\n", i, grade[i]);
+    sum = 0;
+    for (i=0; i<SIZE; i++)
+    {
+        printf("학생 성적을 입력하세요.");
+        scanf("%d", &grade[i]);
+        sum += grade[i];
     }
 
+    average = sum / SIZE;
+    printf("성적 평균 : %d\n", average);
     return 0;
 }
-
