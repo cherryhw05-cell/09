@@ -1,47 +1,36 @@
 // 09주차 프로그래밍 실습
 
-// 실습03
+// 실습04
 #include <stdio.h>
-#include <stdlib.h>
-#define SIZE 5
+#define SIZE 4
 
-// int main(void) {
-//     int i;
-//     int grade[SIZE];
-//     int score[SIZE];
+void square_array(int a[], int size);
+void print_array(int a[], int size);
 
-//     for (i=0; i<SIZE; i++) {
-//         grade[i] = rand() % 100;
-//         score[i] = grade[i];
-//     }
+int main(void)
+{
+    int list[SIZE] = {1, 2, 3, 4};
 
-//     for (i=0; i<SIZE; i++)
-//         printf("score[%d] = %d\n", i, score[i]);
-
-//     return 0;
-// }
-
-int main(void) {
-    int i;
-    int a[SIZE] = {1, 2, 3, 4, 5};
-    int b[SIZE] = {1, 2, 4, 5, 6};
-    int flag_same = 1;
-
-    for(i=0; i<SIZE; i++) {
-        if (a[i] == b[i]) {
-            flag_same++;
-            printf("인덱스[%d]의 배열은 같은 값을 가집니다.\n", i);
-        }
-        else {
-            flag_same = 0;
-            printf("인덱스[%d]의 배열은 다른 값을 가집니다.\n", i);
-        }
-    }
-
-    if (flag_same == 1)
-        printf("same!!\n");
-    else
-        printf("different!!\n");
+    print_array(list, SIZE);
+    square_array(list, SIZE);
+    print_array(list, SIZE);
 
     return 0;
+}
+
+void square_array(int a[], int size)
+{
+    int i;
+
+    for (i=0; i<SIZE; i++)
+        a[i] = a[i] * a[i];
+}
+
+void print_array(int a[], int size)
+{
+    int i;
+
+    for (i=0; i<SIZE; i++)
+        printf("%3d", a[i]);
+    printf("\n");
 }
